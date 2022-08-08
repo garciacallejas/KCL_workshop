@@ -1,0 +1,28 @@
+---
+title: "Proyectos con Rstudio"
+author: "David García Callejas"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, results = FALSE, warning = FALSE)
+```
+
+Los proyectos son la forma más eficiente de organizar un análisis completo en Rstudio. Un proyecto consiste en una serie de carpetas, que contienen datos, código, y potencialmente los resultados de un análisis. Por ejemplo:
+
+```
+1-get_data.R
+2-process_data.R
+3-analyze_data.R
+4-make_graphs.R
+data/
+results/figures/
+```
+
+El hecho de tener todas las carpetas y archivos necesarios en un mismo "proyecto" nos facilita el trabajo, por varias razones. La principal es que nos permite despreocuparnos del directorio de trabajo para leer/escribir archivos. Cuando creamos un proyecto, el directorio de trabajo asignado al mismo será su carpeta principal, y cada vez que abramos dicho proyecto, el directorio de trabajo apuntará ahí automáticamente.
+
+Para crear un proyecto, podemos hacerlo desde el menú principal de Rstudio, pinchando en "File" -> "New project". Podemos crear un proyecto en un directorio nuevo, o asignar un proyecto a un directorio que ya existe. La tercera opción, "Version Control", nos es útil cuando queremos trabajar con un sistema de control de versiones como GitHub. Tras tomar esta primera decisión, el siguiente paso es elegir el tipo de proyecto que queremos crear. En el 90% de los casos, trabajaremos con un proyecto estándar ("new project"). Al elegir esta opción, sólo nos queda darle un nombre a nuestro proyecto y elegir la carpeta donde estará almacenado.
+
+Una vez creéis un proyecto nuevo, podéis comprobar que, efectivamente, el directorio de trabajo se ha modificado viendo el resultado de la función `getwd()`. Desde este momento, si creáis una carpeta "data" en vuestro proyecto en la que tengáis los archivos de datos que necesitéis, cuando tengáis el proyecto activo (esquina superior derecha de Rstudio para abrir o cerrar proyectos), podréis leer archivos desde la ruta "data/archivo", sin tener que especificar la ruta completa.
+
+
