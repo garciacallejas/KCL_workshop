@@ -1,0 +1,28 @@
+---
+title: "Projects with Rstudio"
+author: "David García Callejas"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, results = FALSE, warning = FALSE)
+```
+
+Projects are the most efficient way of managing full studies in Rstudio. A project is, in fact, nothing more than a set of folders that hold data, code, and potentially the results of an analysis. For example:
+
+```
+1-get_data.R
+2-process_data.R
+3-analyze_data.R
+4-make_graphs.R
+data/
+results/figures/
+```
+
+Having all folders and files centralised in a single "project" facilitates our work, for different reasons. First, it allows us to forget about specifying full paths to read or write files. When we create a Rstudio project, the working directory assigned to it will be its main folder, and every time we open that project, the working directory will be automatically set to that one. Second, as a project is self-contained, it can easily be shared or distributed with collaborators. This can be done in different ways, for example using Github repositories.
+
+To create a new project, we can do it via Rstudio's main menu, clicking on "File" -> "New project". We may create a project in a new folder, assign a project to an existing folder, or work locally with a project hosted in a Github repository. After this first choice, the next step is to choose the type of project we want to create. In most cases, we will work with standard projects ("new project"). After this, we only need to name our brand new project and choose a main folder for it.
+
+Once you create a new project you may check that, indeed, the working directory has switched to the project's main folder, by calling the function `getwd()`. From now on, if you create for example a folder "data" in your project, and once you are working within that project, you will be able to read files from that folder specifying the relative path "data/file", instead of the full path associated to the file. You may open, close, or switch between projects from the upper-right blue box button in Rstudio.
+
+
