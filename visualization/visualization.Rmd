@@ -70,7 +70,7 @@ Congratulations, you created your first ggplot figure! Now, you will likely want
 # ggsave by default uses inches as units
 # but font size relative to the figure may vary. 
 # I usually try different sizes until I am happy with the ratio and size
-ggsave(filename = "mi_first_plot.png",plot = f1,width = 5,height = 5)
+ggsave(filename = "my_first_plot.png",plot = f1,width = 5,height = 5)
 ```
 
 Before we move on to other types of graphics, let's see how we can improve this first figure. A first idea is to colour points according to the species of the characters.
@@ -196,7 +196,7 @@ f12 <- ggplot(sw, aes(x = height, y = mass)) +
 
 Now it makes sense -hopefully- why ggplot, and the tidyverse in general, prefer data in long format. Here, categorical variables (groups) are organized in columns, instead of distributed across rows. This makes it straightforward to assign grouping variables to aesthetics.
 
-```{r}
+```{r results = TRUE}
 head(sw)
 
 sw.example <- sw[,c("name","height","mass","species_group")]
@@ -219,7 +219,7 @@ sw.wide.plot <- ggplot(sw.example.wide, aes(x = height, y = mass)) +
 
 To create line plots we will use the earthquake data. Let's plot the number of observed earthquakes per century. This example includes the data wrangling previous to the plotting itself, but the compactness of the tidyverse idioms makes it a breeze.
 
-```{r}
+```{r results = TRUE}
 eq <- read.csv2(file = "../data/earthquakes.csv")
 
 head(eq)

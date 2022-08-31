@@ -51,7 +51,7 @@ where, depending on our work directory and folder structure, we may specify the 
 
 A function may accept as many arguments as necessary. We can specify default values for any argument, so that the user doesn't need to specify them is the default values are ok. If we do not specify such default values, calling the function will raise an error if we don't assign a value to every argument in it. In the following example, `arg1` and `arg3` have default values that we can overwrite, while `arg2` does not.
 
-```{r}
+```{r results = TRUE}
 argument_test <- function(arg1 = NULL, arg2, arg3 = 0){
   cat("arg1:",arg1,"\narg2:",arg2,"\narg3:",arg3)
 }
